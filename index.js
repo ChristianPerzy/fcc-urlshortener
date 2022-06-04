@@ -33,7 +33,7 @@ app.post('/api/shorturl', (req, res) => {
   }
 
   dns.lookup(url.hostname, (err, hostname, service) => {
-    if (err) return res.json({error: 'hostname not reachable'});
+    if (err) return res.json({error: 'invalid url'});
 
     short_urls.push({
       original_url: url.href,
